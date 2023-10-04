@@ -36,8 +36,8 @@ const onDragged = (payload: any) => {
             <template #item="{element: todo}">
                 <li>
                     {{ todo.title }}
-                    {{ todo.status }}
                     <span class="delete-icon" @click="deleteTodo(todo)">x</span>
+                    <span class="status">{{ todo.status }}</span>
                     <div>
                         <span class="todo-description">{{ todo.description }}</span>
                     </div>
@@ -76,8 +76,12 @@ const onDragged = (payload: any) => {
     .draggable{
         min-height: 200px;
     }
+    .status{
+        float: right;
+    }
     .delete-icon{
         float: right;
         cursor: pointer;
+        margin-left: 10px;
     }
 </style>
